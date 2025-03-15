@@ -88,7 +88,7 @@
 (defun fetch-daily-bible-verse ()
   "Fetch the daily Bible verse from BibleGateway API."
   (let ((url-request-method "GET")
-        (url "https://www.biblegateway.com/votd/get/?format=json&version=KJV"))
+        (url "https://www.biblegateway.com/votd/get/?format=json&version=AMP"))
     (with-current-buffer (url-retrieve-synchronously url t t)
       (goto-char url-http-end-of-headers)
       (let* ((json-string (buffer-substring-no-properties (point) (point-max)))
